@@ -8,7 +8,7 @@
   include "config.php";
 ?>
 <?php
-    // Check if form is submitted for user update, then redirect to homepage after update
+    // Check apakah form telah di submit untuk update, setelah itu redirect ke index setelah update
     if(isset($_POST['submit']))
     {   
         $id = $_POST['id'];
@@ -20,10 +20,10 @@
         $nama = $_POST['nama'];
         $nim = $_POST['nim'];
 
-        // update user data
+        // Update data
         $result = mysqli_query($conn, "INSERT INTO covid19 SET id='$id', wilayah='$wilayah', positif='$positif', dirawat='$dirawat', sembuh='$sembuh', meninggal='$meninggal', nama='$nama', nim='$nim'");
 
-        // Redirect to homepage to display updated user in list
+        // Redirect ke homepage
         header("Location: index.php");
     }
 ?>
